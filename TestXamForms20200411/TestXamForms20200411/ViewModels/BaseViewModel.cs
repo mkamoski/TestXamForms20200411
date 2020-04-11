@@ -15,6 +15,7 @@ namespace TestXamForms20200411.ViewModels
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         bool isBusy = false;
+
         public bool IsBusy
         {
             get { return isBusy; }
@@ -42,7 +43,9 @@ namespace TestXamForms20200411.ViewModels
         }
 
         #region INotifyPropertyChanged
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
@@ -51,6 +54,7 @@ namespace TestXamForms20200411.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
     }
 }
